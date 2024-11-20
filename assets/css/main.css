@@ -2092,51 +2092,46 @@ input, select, textarea {
 /* Image */
 
 	.image {
-        border-radius: 3px;
-        border: 0;
-        display: inline-block;
-        position: relative; /* Ensure proper stacking context */
-        pointer-events: auto; /* Allow clicks within image links */
-    }
-    
-    .image img {
-        border-radius: 3px;
-        display: block;
-    }
-    
-    .image a {
-        position: relative; /* Ensure links are above surrounding elements */
-        z-index: 10; /* Fix stacking order for links */
-        pointer-events: auto; /* Ensure links are clickable */
-    }
-    
-    /* Button-like styling for images */
-.image-button {
-    display: inline-block; /* Makes the link a block-like button */
-    border: 2px solid #007bff; /* Blue border like a button */
-    border-radius: 5px; /* Rounded corners for button effect */
-    overflow: hidden; /* Ensures the image stays inside the button bounds */
-    text-decoration: none; /* Removes default link underline */
-    transition: transform 0.2s ease, box-shadow 0.2s ease; /* Smooth hover effect */
-}
+		border-radius: 3px;
+		border: 0;
+		display: inline-block;
+		position: relative;
+	}
 
-.image-button img {
-    display: block; /* Removes inline spacing */
-    width: 100%; /* Ensures the image fits the container */
-    height: auto; /* Maintains aspect ratio */
-}
+		.image img {
+			border-radius: 3px;
+			display: block;
+		}
 
-.image-button:hover {
-    transform: scale(1.05); /* Slightly enlarges the button on hover */
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3); /* Adds a hover shadow effect */
-    border-color: #0056b3; /* Changes border color on hover */
-}
+		.image.left {
+			float: left;
+			margin: 0 2em 2em 0;
+			top: 0.25em;
+		}
 
-.image-button:focus {
-    outline: none; /* Removes the default focus outline */
-    box-shadow: 0px 0px 0px 4px rgba(0, 123, 255, 0.5); /* Adds a custom focus outline */
-}
+		.image.right {
+			float: right;
+			margin: 0 0 2em 2em;
+			top: 0.25em;
+		}
 
+		.image.left, .image.right {
+			max-width: 40%;
+		}
+
+			.image.left img, .image.right img {
+				width: 100%;
+			}
+
+		.image.fit {
+			display: block;
+			margin: 0 0 2em 0;
+			width: 100%;
+		}
+
+			.image.fit img {
+				width: 100%;
+			}
 
 /* List */
 
@@ -2663,47 +2658,132 @@ input, select, textarea {
 
 			}
 
-/* .spotlight .image */
-.spotlight .image {
-    -moz-order: 1;
-    -webkit-order: 1;
-    -ms-order: 1;
-    order: 1;
-    border-radius: 0;
-    width: 40%;
-    position: relative; /* Added for stacking context */
-    pointer-events: auto; /* Ensures links inside are clickable */
-}
+/* Spotlight */
 
-.spotlight .image img {
-    border-radius: 0;
-    width: 100%;
-}
+	.spotlight {
+		-moz-align-items: center;
+		-webkit-align-items: center;
+		-ms-align-items: center;
+		align-items: center;
+		display: -moz-flex;
+		display: -webkit-flex;
+		display: -ms-flex;
+		display: flex;
+	}
 
-.spotlight .image a {
-    position: relative; /* Added to ensure clickable links are above other elements */
-    z-index: 10; /* Added for proper stacking of links */
-    pointer-events: auto; /* Ensures the link itself is clickable */
-}
+		.spotlight .image {
+			-moz-order: 1;
+			-webkit-order: 1;
+			-ms-order: 1;
+			order: 1;
+			border-radius: 0;
+			width: 40%;
+		}
 
-/* .spotlight .content */
-.spotlight .content {
-    padding: 2em 4em 0.1em 4em;
-    -moz-order: 2;
-    -webkit-order: 2;
-    -ms-order: 2;
-    order: 2;
-    max-width: 48em;
-    width: 60%;
-    position: relative; /* Added for stacking context */
-    pointer-events: auto; /* Prevents blocking clicks on child elements */
-}
+			.spotlight .image img {
+				border-radius: 0;
+				width: 100%;
+			}
 
-.spotlight .content a {
-    position: relative; /* Ensures links are above other elements */
-    z-index: 10; /* Fixes stacking order */
-    pointer-events: auto; /* Ensures the link itself is clickable */
-}
+		.spotlight .content {
+			padding: 2em 4em 0.1em 4em ;
+			-moz-order: 2;
+			-webkit-order: 2;
+			-ms-order: 2;
+			order: 2;
+			max-width: 48em;
+			width: 60%;
+		}
+
+		.spotlight:nth-child(2n) {
+			-moz-flex-direction: row-reverse;
+			-webkit-flex-direction: row-reverse;
+			-ms-flex-direction: row-reverse;
+			flex-direction: row-reverse;
+		}
+
+		.spotlight:nth-child(1) {
+			background-color: rgba(0, 0, 0, 0.075);
+		}
+
+		.spotlight:nth-child(2) {
+			background-color: rgba(0, 0, 0, 0.15);
+		}
+
+		.spotlight:nth-child(3) {
+			background-color: rgba(0, 0, 0, 0.225);
+		}
+
+		.spotlight:nth-child(4) {
+			background-color: rgba(0, 0, 0, 0.3);
+		}
+
+		.spotlight:nth-child(5) {
+			background-color: rgba(0, 0, 0, 0.375);
+		}
+
+		.spotlight:nth-child(6) {
+			background-color: rgba(0, 0, 0, 0.45);
+		}
+
+		.spotlight:nth-child(7) {
+			background-color: rgba(0, 0, 0, 0.525);
+		}
+
+		.spotlight:nth-child(8) {
+			background-color: rgba(0, 0, 0, 0.6);
+		}
+
+		.spotlight:nth-child(9) {
+			background-color: rgba(0, 0, 0, 0.675);
+		}
+
+		.spotlight:nth-child(10) {
+			background-color: rgba(0, 0, 0, 0.75);
+		}
+
+		@media screen and (max-width: 1280px) {
+
+			.spotlight .image {
+				width: 45%;
+			}
+
+			.spotlight .content {
+				width: 55%;
+			}
+
+		}
+
+		@media screen and (max-width: 980px) {
+
+			.spotlight {
+				display: block;
+			}
+
+				.spotlight br {
+					display: none;
+				}
+
+				.spotlight .image {
+					width: 100%;
+				}
+
+				.spotlight .content {
+					padding: 4em 3em 2em 3em ;
+					max-width: none;
+					text-align: center;
+					width: 100%;
+				}
+
+		}
+
+		@media screen and (max-width: 736px) {
+
+			.spotlight .content {
+				padding: 3em 2em 1em 2em ;
+			}
+
+		}
 
 /* Wrapper */
 
